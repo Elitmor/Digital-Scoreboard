@@ -21,7 +21,3 @@ document.querySelectorAll("h2")[0].addEventListener("click", function() {
 document.querySelectorAll("h2")[1].addEventListener("click", function() {
     document.execCommand("selectAll", false, null);
 });
-
-document.addEventListener("keypress", function(e) {
-    if ((e.keyCode || e.which) == 13) return false;
-});
