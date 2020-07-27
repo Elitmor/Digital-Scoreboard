@@ -1,23 +1,15 @@
-var teamA = 0;
-var teamB = 0;
+const upBtnEl = document.getElementById('up-btn');
+const downBtnEl = document.getElementById('down-btn');
+const value = document.getElementById('value');
 
-function result(points, team) {
-    team = "team" + (team ? "B" : "A");
-    if (window[team] + points >= 0) window[team] += points;
-    document.querySelectorAll("p")[team == "teamA" ? 0 : 1].textContent = window[team];
-}
+let currentValue = 0;
 
-document.querySelectorAll("section")[0].addEventListener("click", function(e) {
-    if (e.target.tagName == "DIV") result(parseInt(e.target.textContent), 0);
-});
-document.querySelectorAll("section")[1].addEventListener("click", function(e) {
-    if (e.target.tagName == "DIV") result(parseInt(e.target.textContent), 1);
+upBtnEl.addEventListener('click', () => {
+    currentValue++;
+    value.innerHTML = currentValue;
 });
 
-document.querySelectorAll("h2")[0].addEventListener("click", function() {
-    document.execCommand("selectAll", false, null);
-});
-
-document.querySelectorAll("h2")[1].addEventListener("click", function() {
-    document.execCommand("selectAll", false, null);
+downBtnEl.addEventListener('click', () => {
+    currentValue--;
+    value.innerHTML = currentValue;
 });
