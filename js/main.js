@@ -1,15 +1,21 @@
-const upBtnEl = document.getElementById('up-btn');
-const downBtnEl = document.getElementById('down-btn');
-const value = document.getElementById('value');
+"use strict";
 
-let currentValue = 0;
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
-upBtnEl.addEventListener('click', () => {
-    currentValue++;
-    value.innerHTML = currentValue;
-});
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-downBtnEl.addEventListener('click', () => {
-    currentValue--;
-    value.innerHTML = currentValue;
-});
+const a = prompt("Один из последних просмотренных фильмов?", ""),
+    b = prompt("На сколько оцените его??", ""),
+    c = prompt("Один из последних просмотренных фильмов?", ""),
+    d = prompt("На сколько оцените его??", "");
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
